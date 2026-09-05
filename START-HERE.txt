@@ -1,0 +1,21 @@
+MARISA LEARNING APP — START HERE
+
+The active deployment workflow is included inside:
+.github/workflows/deploy-pages.yml
+
+Folders beginning with a dot may be hidden on iPhone, iPad, or Mac.
+DEPLOY-APP.yml is a visible copy for reference. Do not rename or remove the
+active .github/workflows/deploy-pages.yml file after uploading the complete
+package to GitHub.
+
+EASIEST METHOD — NO WORKFLOW SELECTION NEEDED
+1. Create a GitHub repository.
+2. Upload every extracted file and folder to the repository.
+3. Open Settings > Pages.
+4. Select GitHub Actions under Source.
+5. Wait for Deploy Marisa Learning App to finish under the Actions tab.
+
+ALTERNATIVE METHOD
+In Settings > Pages, select Deploy from a branch, then choose main and /(root).
+With this method GitHub publishes index.html directly.
+

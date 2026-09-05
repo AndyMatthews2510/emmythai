@@ -8,12 +8,16 @@
 
 ## เผยแพร่ด้วย GitHub Pages
 
+> หากมองไม่เห็นไฟล์ Deploy: โฟลเดอร์ `.github` อาจถูกซ่อนบนโทรศัพท์หรือ Mac แต่ไฟล์ทำงานจริงอยู่ที่ `.github/workflows/deploy-pages.yml` และมีสำเนาที่มองเห็นง่ายชื่อ `DEPLOY-APP.yml`
+
 1. สร้าง Repository ใหม่ใน GitHub เช่น `marisa-learning-app`
 2. อัปโหลดไฟล์และโฟลเดอร์ทั้งหมดในชุดนี้ไว้ที่ระดับบนสุดของ Repository
 3. ไปที่ **Settings → Pages**
 4. ใต้ **Build and deployment → Source** เลือก **GitHub Actions**
 5. เปิดแท็บ **Actions** และรอ workflow ชื่อ **Deploy Marisa Learning App** ทำงานเสร็จ
 6. กลับไปที่ **Settings → Pages** เพื่อเปิดลิงก์เว็บไซต์
+
+อีกวิธีที่ไม่ต้องใช้ workflow คือเลือก **Deploy from a branch → main → /(root)** ในหน้า Settings → Pages
 
 ลิงก์โดยทั่วไปจะมีรูปแบบ:
 
@@ -30,4 +34,3 @@
 ## หมายเหตุเรื่องคะแนน
 
 คะแนนบันทึกด้วย `localStorage` ในเบราว์เซอร์ของอุปกรณ์แต่ละเครื่อง หากล้างข้อมูลเว็บไซต์ เปลี่ยนเบราว์เซอร์ หรือเปลี่ยนอุปกรณ์ คะแนนจะไม่ติดตามไปด้วย
-
