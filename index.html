@@ -35,6 +35,8 @@
         <button class="tab" data-screen="tone-game"><span aria-hidden="true">🎵</span> ผันวรรณยุกต์</button>
         <button class="tab" data-screen="karan-game"><span aria-hidden="true">🤫</span> ตัวการันต์</button>
         <button class="tab social-tab" data-screen="social-game"><span aria-hidden="true">🧭</span> สังคมศึกษา</button>
+        <button class="tab kaew-tab" data-screen="kaew-game"><span aria-hidden="true">📖</span> แก้วจอมแก่น</button>
+        <button class="tab nok-tab" data-screen="nok-game"><span aria-hidden="true">🐦</span> นกกางเขน</button>
         <button class="tab" data-screen="mixed-quiz"><span aria-hidden="true">🏆</span> แบบทดสอบ</button>
         <button class="tab" data-screen="parent-view"><span aria-hidden="true">📊</span> คุณแม่ดูผล</button>
       </nav>
@@ -201,6 +203,14 @@
         <div id="socialResult" class="quiz-result social-result" hidden></div>
       </section>
 
+      <section id="kaew-game" class="screen" aria-label="แก้วจอมแก่น">
+        <div id="kaew-story-root"></div>
+      </section>
+
+      <section id="nok-game" class="screen" aria-label="นกกางเขน">
+        <div id="nok-story-root"></div>
+      </section>
+
       <section id="mixed-quiz" class="screen" aria-labelledby="quizTitle">
         <div id="quizIntro" class="quiz-intro">
           <div class="trophy" aria-hidden="true">🏆</div>
@@ -241,6 +251,8 @@
           <article><span>ความแม่นยำ</span><strong id="statAccuracy">–</strong></article>
           <article><span>ตัวการันต์ล่าสุด</span><strong id="statKaran">ยังไม่ได้เล่น</strong></article>
           <article><span>สังคมศึกษาล่าสุด</span><strong id="statSocial">ยังไม่ได้เล่น</strong></article>
+          <article><span>แก้วจอมแก่นล่าสุด</span><strong id="statKaewStory">ยังไม่ได้เล่น</strong></article>
+          <article><span>นกกางเขนล่าสุด</span><strong id="statNok">ยังไม่ได้เล่น</strong></article>
           <article><span>แบบทดสอบล่าสุด</span><strong id="statQuiz">ยังไม่ได้ทำ</strong></article>
         </div>
         <div class="parent-panels">
