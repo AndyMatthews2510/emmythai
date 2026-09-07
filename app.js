@@ -155,7 +155,7 @@ function shuffle(arr) { return [...arr].sort(() => Math.random() - .5); }
 function app() { return document.getElementById('app'); }
 function setActive(selector, value) {
   document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-  const btn = document.querySelector(selector + '="' + value + '"]');
+  const btn = document.querySelector('[' + selector + '="' + value + '"]');
   if (btn) btn.classList.add('active');
 }
 
