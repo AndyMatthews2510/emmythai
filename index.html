@@ -3,267 +3,48 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#4f46e5">
-  <meta name="description" content="เกมเรียนรู้ภาษาไทยและสังคมศึกษา สำหรับนักเรียนชั้นประถมศึกษาปีที่ 2">
+  <meta name="theme-color" content="#153b5b">
+  <meta name="description" content="มาริซ่าเรียนสนุก — ภาษาไทย การอ่าน และสังคมศึกษา ป.2">
   <title>มาริซ่าเรียนสนุก</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="app-shell">
-    <header class="topbar">
-      <div class="brand" aria-label="ภาษาไทยแสนสนุก">
-        <span class="brand-mark" aria-hidden="true">ก</span>
-        <div><strong>มาริซ่าเรียนสนุก</strong><small>เรียน เล่น คิดเป็น</small></div>
+  <header class="topbar">
+    <div class="brand-wrap">
+      <div class="brand-mark" aria-hidden="true">🌈</div>
+      <div>
+        <p class="eyebrow">มาริซ่า · ป.2/7</p>
+        <h1>มาริซ่าเรียนสนุก</h1>
+        <p class="subtitle">เรียน · เล่น · คิดเป็น</p>
       </div>
-      <div class="student-chip"><span aria-hidden="true">🌟</span><span>มาริซ่า · ป.2/7</span></div>
-    </header>
+    </div>
+    <div class="score-pill" title="ดาวสะสม">
+      <span aria-hidden="true">⭐</span>
+      <strong id="starCount">0</strong>
+      <span>ดาว</span>
+    </div>
+  </header>
 
-    <main>
-      <section class="welcome-card">
-        <div>
-          <p class="eyebrow">ภารกิจวันนี้</p>
-          <h1>พิชิตภาษาไทยและสังคมศึกษา</h1>
-          <p>เล่นทีละด่าน ฝึกทั้งความจำ ความเข้าใจ และการคิดวิเคราะห์</p>
-        </div>
-        <div class="star-bank" aria-label="ดาวสะสม">
-          <span>ดาวสะสม</span><strong id="totalStars">0</strong><span aria-hidden="true">⭐</span>
-        </div>
-      </section>
+  <nav class="main-nav" aria-label="เมนูหลัก">
+    <button class="nav-btn active" data-view="home">🏠 หน้าแรก</button>
+    <button class="nav-btn" data-subject="thai">ก ่ ้ ๊ ๋ หลักภาษา</button>
+    <button class="nav-btn" data-subject="social">🧭 สังคมศึกษา</button>
+    <button class="nav-btn" data-subject="kaew">📚 แก้วจอมแก่น</button>
+    <button class="nav-btn" data-subject="bird">🐦 นกกางเขน</button>
+    <button class="nav-btn" data-view="quiz">📝 แบบทดสอบ</button>
+    <button class="nav-btn" data-view="parent">👩 คุณแม่ดูผล</button>
+  </nav>
 
-      <nav class="lesson-tabs" aria-label="เลือกบทเรียน">
-        <button class="tab active" data-screen="home-game"><span aria-hidden="true">🏠</span> บ้านพยัญชนะ</button>
-        <button class="tab" data-screen="tone-game"><span aria-hidden="true">🎵</span> ผันวรรณยุกต์</button>
-        <button class="tab" data-screen="karan-game"><span aria-hidden="true">🤫</span> ตัวการันต์</button>
-        <button class="tab social-tab" data-screen="social-game"><span aria-hidden="true">🧭</span> สังคมศึกษา</button>
-        <button class="tab kaew-tab" data-screen="kaew-game"><span aria-hidden="true">📖</span> แก้วจอมแก่น</button>
-        <button class="tab nok-tab" data-screen="nok-game"><span aria-hidden="true">🐦</span> นกกางเขน</button>
-        <button class="tab" data-screen="mixed-quiz"><span aria-hidden="true">🏆</span> แบบทดสอบ</button>
-        <button class="tab" data-screen="parent-view"><span aria-hidden="true">📊</span> คุณแม่ดูผล</button>
-      </nav>
+  <main id="app" class="app-shell" tabindex="-1"></main>
 
-      <section id="home-game" class="screen active" aria-labelledby="homeTitle">
-        <div class="lesson-heading">
-          <div><p class="step-label">ด่านที่ 1</p><h2 id="homeTitle">ส่งพยัญชนะกลับบ้าน</h2><p>เลือกว่าพยัญชนะตัวนี้เป็นอักษรสูง อักษรกลาง หรืออักษรต่ำ</p></div>
-          <div class="progress-wrap"><span id="classProgressText">ข้อ 1/10</span><div class="progress"><i id="classProgressBar"></i></div></div>
-        </div>
+  <footer class="site-footer">
+    <p>ทำทีละนิด ฝึกซ้ำได้ และไม่เป็นไรถ้ายังตอบผิด — ข้อผิดคือโอกาสเรียนรู้ 💛</p>
+    <p class="version">HTML edition · Social Studies updated through Chapter 7 · 7 Sep 2026</p>
+  </footer>
 
-        <div class="game-layout">
-          <article class="question-card">
-            <div class="mascot-line"><span class="mascot" aria-hidden="true">🦉</span><span id="classPrompt">ตัวนี้อยู่บ้านไหนนะ?</span></div>
-            <div id="classLetter" class="big-letter" aria-live="polite">ก</div>
-            <button class="listen-button" id="speakLetter" type="button">🔊 ฟังชื่อตัวอักษร</button>
-            <div id="classFeedback" class="feedback" aria-live="polite"></div>
-          </article>
-
-          <div class="answer-grid three-homes" role="group" aria-label="เลือกหมู่อักษร">
-            <button class="answer-card high" data-class-answer="สูง"><span class="house-icon" aria-hidden="true">☁️</span><strong>อักษรสูง</strong><small>มี 11 ตัว</small></button>
-            <button class="answer-card middle" data-class-answer="กลาง"><span class="house-icon" aria-hidden="true">🏡</span><strong>อักษรกลาง</strong><small>มี 9 ตัว</small></button>
-            <button class="answer-card low" data-class-answer="ต่ำ"><span class="house-icon" aria-hidden="true">🌱</span><strong>อักษรต่ำ</strong><small>มี 24 ตัว</small></button>
-          </div>
-        </div>
-
-        <details class="memory-card">
-          <summary>เปิดตัวช่วยจำ</summary>
-          <div class="memory-grid">
-            <div><strong class="middle-text">อักษรกลาง 9 ตัว</strong><p>ก จ ฎ ฏ ด ต บ ป อ</p><small>ไก่ จิก เด็ก ตาย ชฎา ปฏัก บน ปาก โอ่ง</small></div>
-            <div><strong class="high-text">อักษรสูง 11 ตัว</strong><p>ข ฃ ฉ ฐ ถ ผ ฝ ศ ษ ส ห</p><small>ไข่ ขวด ฉิ่ง ฐาน ถุง ผึ้ง ฝา ศาล ฤๅษี เสือ หีบ</small></div>
-            <div><strong class="low-text">อักษรต่ำ 24 ตัว</strong><p>ค ฅ ฆ ง ช ซ ฌ ญ ฑ ฒ ณ ท ธ น พ ฟ ภ ม ย ร ล ว ฬ ฮ</p><small>ถ้าไม่อยู่บ้านกลางหรือบ้านสูง จะอยู่บ้านต่ำ</small></div>
-          </div>
-        </details>
-      </section>
-
-      <section id="tone-game" class="screen" aria-labelledby="toneTitle">
-        <div class="lesson-heading">
-          <div><p class="step-label purple">ด่านที่ 2</p><h2 id="toneTitle">ฟังให้ดี เสียงอะไรเอ่ย?</h2><p>อักษรกลางคำเป็นผันได้ 5 เสียง และรูปวรรณยุกต์ตรงกับเสียง</p></div>
-          <div class="progress-wrap"><span id="toneProgressText">ข้อ 1/10</span><div class="progress purple-progress"><i id="toneProgressBar"></i></div></div>
-        </div>
-
-        <div class="tone-rule" aria-label="ตัวอย่างการผันวรรณยุกต์">
-          <span>กา<small>สามัญ</small></span><span>ก่า<small>เอก</small></span><span>ก้า<small>โท</small></span><span>ก๊า<small>ตรี</small></span><span>ก๋า<small>จัตวา</small></span>
-        </div>
-
-        <article class="tone-question-card">
-          <div class="mascot-line"><span class="mascot" aria-hidden="true">🐘</span><span>คำนี้มีเสียงวรรณยุกต์อะไร?</span></div>
-          <div id="toneWord" class="big-word" aria-live="polite">ก่า</div>
-          <button class="listen-button violet" id="speakWord" type="button">🔊 ฟังคำ</button>
-          <div id="toneFeedback" class="feedback" aria-live="polite"></div>
-          <div class="tone-answers" role="group" aria-label="เลือกเสียงวรรณยุกต์">
-            <button data-tone-answer="สามัญ">สามัญ</button><button data-tone-answer="เอก">เอก</button><button data-tone-answer="โท">โท</button><button data-tone-answer="ตรี">ตรี</button><button data-tone-answer="จัตวา">จัตวา</button>
-          </div>
-        </article>
-
-        <div class="tip-card"><span aria-hidden="true">💡</span><p><strong>เคล็ดลับ:</strong> หา “พยัญชนะต้น” ก่อน เช่น <b>เกี๊ยว</b> มีพยัญชนะต้นคือ <b>ก</b> แม้สระ เ จะเขียนอยู่ข้างหน้า</p></div>
-      </section>
-
-      <section id="karan-game" class="screen" aria-labelledby="karanTitle">
-        <div class="lesson-heading">
-          <div><p class="step-label pink">ด่านที่ 3</p><h2 id="karanTitle">เกมตัวไหนเงียบ?</h2><p>มองหาเครื่องหมาย ์ แล้วแตะส่วนของคำที่ไม่ออกเสียง</p></div>
-          <div class="progress-wrap"><span id="karanProgressText">ข้อ 1/10</span><div class="progress pink-progress"><i id="karanProgressBar"></i></div></div>
-        </div>
-
-        <div class="karan-rule">
-          <div class="silence-mark" aria-hidden="true">์</div>
-          <p><strong>เครื่องหมาย ์ เรียกว่า “ไม้ทัณฑฆาต”</strong><br>ตัวอักษรที่มีเครื่องหมายนี้กำกับเรียกว่า <b>“ตัวการันต์”</b> เวลาอ่านเราไม่ออกเสียงตัวนั้น</p>
-        </div>
-
-        <div class="karan-layout">
-          <article class="karan-question-card">
-            <div class="mascot-line"><span class="mascot" aria-hidden="true">🤫</span><span>ส่วนใดมีไม้ทัณฑฆาตและไม่ออกเสียง?</span></div>
-            <div id="karanVisual" class="word-visual karan-visual" role="img" aria-label="ภาพประกอบคำว่า โทรศัพท์"></div>
-            <div id="karanWord" class="big-karan-word" aria-live="polite">โทรศัพท์</div>
-            <button class="listen-button pink-button" id="speakKaranWord" type="button">🔊 ฟังคำอ่าน</button>
-            <div id="karanChoices" class="karan-choices" role="group" aria-label="เลือกตัวการันต์"></div>
-            <div id="karanFeedback" class="feedback" aria-live="polite"></div>
-          </article>
-
-          <aside class="teach-card">
-            <p class="step-label pink">ฝึกทีละคำ</p>
-            <h3>สูตรจำ 4 ขั้น</h3>
-            <ol class="four-steps">
-              <li><span>1</span>แม่อ่านให้ฟังก่อน</li>
-              <li><span>2</span>อ่านพร้อมกัน</li>
-              <li><span>3</span>ให้ลูกลองอ่านเอง</li>
-              <li><span>4</span>วงกลมหรือแตะตัวการันต์</li>
-            </ol>
-            <div class="say-example"><strong>ตัวอย่าง</strong><p>“โทรศัพท์ อ่านว่า โท-ระ-สับ เห็น <mark>พ์</mark> ไหมคะ เราจึงไม่ออกเสียง พ”</p></div>
-          </aside>
-        </div>
-
-        <section class="flashcard-zone" aria-labelledby="flashcardTitle">
-          <div class="flashcard-top">
-            <div><p class="step-label pink">คลังคำศัพท์ 54 คำ · ตรวจทานแล้ว</p><h3 id="flashcardTitle">แฟลชการ์ดตัวการันต์พร้อมภาพ</h3></div>
-            <label>เลือกชุดคำศัพท์ <select id="flashcardSet"><option value="0">ชุดที่ 1 · คำง่ายจากภาพ</option><option value="1">ชุดที่ 2 · วันและสิ่งใกล้ตัว</option><option value="2">ชุดที่ 3 · คำทั่วไป</option><option value="3">ชุดที่ 4 · ชื่อจังหวัด</option><option value="4">ชุดที่ 5 · คำจากแบบเลือกตอบ</option></select></label>
-          </div>
-          <div class="flashcard-stage">
-            <button id="prevFlashcard" class="round-button" aria-label="คำก่อนหน้า">‹</button>
-            <article class="word-flashcard">
-              <span id="flashcardCounter">1/10</span>
-              <div id="flashcardVisual" class="word-visual flashcard-visual" role="img" aria-label="ภาพประกอบคำว่า โทรศัพท์"></div>
-              <div id="flashcardWord">โทรศัพท์</div>
-              <p id="flashcardReading">อ่านว่า โท-ระ-สับ</p>
-              <button id="speakFlashcard" class="listen-button pink-button">🔊 ฟังคำอ่าน</button>
-            </article>
-            <button id="nextFlashcard" class="round-button" aria-label="คำถัดไป">›</button>
-          </div>
-        </section>
-      </section>
-
-      <section id="social-game" class="screen social-screen" aria-labelledby="socialTitle">
-        <div id="socialIntro">
-          <div class="lesson-heading">
-            <div><p class="step-label social">ด่านที่ 4 · สังคมศึกษา</p><h2 id="socialTitle">ภารกิจนักสืบกาลเวลา</h2><p>สังเกตคำบอกเวลา อ่านปฏิทิน และใช้หลักฐานค้นหาเรื่องราวในอดีต</p></div>
-            <div class="social-badge"><span aria-hidden="true">🧠</span><strong>จำ · เข้าใจ · คิดวิเคราะห์</strong></div>
-          </div>
-
-          <div class="social-lessons">
-            <article class="social-lesson time-card">
-              <span class="lesson-icon" aria-hidden="true">🕰️</span>
-              <div><small>บทที่ 1</small><h3>อดีต ปัจจุบัน อนาคต</h3><p><b>อดีต</b> ผ่านไปแล้ว · <b>ปัจจุบัน</b> กำลังเกิดขึ้น · <b>อนาคต</b> ยังมาไม่ถึง</p></div>
-              <details><summary>เปิดคลังคำบอกเวลา</summary><div class="time-word-grid"><span><b>อดีต</b> เมื่อวานนี้ · เดือนก่อน · ปีที่แล้ว</span><span><b>ปัจจุบัน</b> วันนี้ · ตอนนี้ · ปีนี้</span><span><b>อนาคต</b> พรุ่งนี้ · สัปดาห์หน้า · ปีหน้า</span></div></details>
-            </article>
-            <article class="social-lesson calendar-card">
-              <span class="lesson-icon" aria-hidden="true">📅</span>
-              <div><small>บทที่ 2</small><h3>วันสำคัญในปฏิทิน</h3><p>ใช้ปฏิทินบอกวัน เดือน ปี วางแผนกิจกรรม และเตือนความจำ</p></div>
-              <details><summary>เปิดตัวอย่างวันสำคัญ</summary><p class="lesson-note">1 ม.ค. วันขึ้นปีใหม่ · 13–15 เม.ย. วันสงกรานต์ · 12 ส.ค. วันแม่แห่งชาติ · 10 ธ.ค. วันรัฐธรรมนูญ</p></details>
-            </article>
-            <article class="social-lesson evidence-card">
-              <span class="lesson-icon" aria-hidden="true">🔎</span>
-              <div><small>บทที่ 3</small><h3>นักสืบเหตุการณ์ที่ผ่านมา</h3><p>ค้นหาจากคำบอกเล่า ภาพถ่าย สูติบัตร ทะเบียนบ้าน และเรียงเป็นเส้นเวลา</p></div>
-              <details><summary>เปิดหลักคิดของนักสืบ</summary><p class="lesson-note">ถามว่า “ใครเล่า?” “หลักฐานบอกอะไร?” และ “ตรวจสอบกับแหล่งอื่นได้ไหม?”</p></details>
-            </article>
-          </div>
-
-          <div class="mission-panel">
-            <div><p class="step-label social">เลือกภารกิจ · คลังโจทย์ 35 ข้อ</p><h3>พร้อมเป็นนักสืบหรือยัง?</h3></div>
-            <div class="social-mode-grid" role="radiogroup" aria-label="เลือกชุดสังคมศึกษา">
-              <button class="social-mode selected" data-social-mode="mixed" role="radio" aria-checked="true"><span>🌈</span><strong>ท้าทายรวม</strong><small>15 ข้อ · ครบ 3 บท</small></button>
-              <button class="social-mode" data-social-mode="time" role="radio" aria-checked="false"><span>⏳</span><strong>กาลเวลา</strong><small>10 ข้อ</small></button>
-              <button class="social-mode" data-social-mode="calendar" role="radio" aria-checked="false"><span>🗓️</span><strong>ปฏิทิน</strong><small>10 ข้อ</small></button>
-              <button class="social-mode" data-social-mode="evidence" role="radio" aria-checked="false"><span>🕵️</span><strong>นักสืบอดีต</strong><small>10 ข้อ</small></button>
-            </div>
-            <button id="startSocial" class="primary-button social-primary" type="button">เริ่มภารกิจท้าทายรวม 15 ข้อ</button>
-          </div>
-        </div>
-
-        <div id="socialPlay" class="social-play" hidden>
-          <div class="social-quiz-top"><button id="exitSocial" class="back-button" type="button">‹ เลือกภารกิจใหม่</button><span id="socialCounter">ข้อ 1/15</span><span>คะแนน <b id="socialScore">0</b></span></div>
-          <div class="progress social-progress"><i id="socialProgressBar"></i></div>
-          <article class="social-question-card">
-            <div class="thinking-level"><span id="socialLevel">ฝึกเข้าใจ</span><span id="socialTopic">กาลเวลา</span></div>
-            <div id="socialIcon" class="social-question-icon" aria-hidden="true">🕰️</div>
-            <h3 id="socialQuestion">คำถาม</h3>
-            <div id="socialSubject" class="social-subject"></div>
-            <p id="socialInstruction" class="quiz-instruction" hidden>เลือกได้มากกว่า 1 คำตอบ แล้วกด “ตรวจคำตอบ”</p>
-            <div id="socialAnswers" class="quiz-answers social-answers"></div>
-            <button id="checkSocial" class="check-button social-check" type="button" hidden>ตรวจคำตอบ</button>
-            <div id="socialFeedback" class="feedback quiz-solution" aria-live="polite"></div>
-            <button id="nextSocial" class="primary-button social-primary quiz-next" type="button" hidden>ข้อต่อไป</button>
-          </article>
-        </div>
-        <div id="socialResult" class="quiz-result social-result" hidden></div>
-      </section>
-
-      <section id="kaew-game" class="screen" aria-label="แก้วจอมแก่น">
-        <div id="kaew-story-root"></div>
-      </section>
-
-      <section id="nok-game" class="screen" aria-label="นกกางเขน">
-        <div id="nok-story-root"></div>
-      </section>
-
-      <section id="mixed-quiz" class="screen" aria-labelledby="quizTitle">
-        <div id="quizIntro" class="quiz-intro">
-          <div class="trophy" aria-hidden="true">🏆</div>
-          <p class="step-label gold">ภารกิจสุดท้าย</p>
-          <h2 id="quizTitle">คลังแบบทดสอบ 5 ชุด</h2>
-          <p>เลือกชุดที่อยากฝึก ทุกข้อจะแสดงเฉลยและเหตุผลก่อนกดไปข้อต่อไป</p>
-          <div class="quiz-mode-grid" role="radiogroup" aria-label="เลือกชุดแบบทดสอบ">
-            <button class="quiz-mode selected" data-quiz-mode="worksheet" role="radio" aria-checked="true"><span>📚</span><strong>จากภาพแบบเรียน</strong><small>20 ข้อ · รูปแบบใกล้ข้อสอบ</small></button>
-            <button class="quiz-mode" data-quiz-mode="mixed" role="radio" aria-checked="false"><span>🌈</span><strong>สุ่มรวม</strong><small>10 ข้อ · ครบ 3 เรื่อง</small></button>
-            <button class="quiz-mode" data-quiz-mode="class" role="radio" aria-checked="false"><span>🏡</span><strong>ไตรยางศ์</strong><small>15 ข้อ · สูง กลาง ต่ำ</small></button>
-            <button class="quiz-mode" data-quiz-mode="tone" role="radio" aria-checked="false"><span>🎵</span><strong>วรรณยุกต์</strong><small>15 ข้อ · 5 เสียง</small></button>
-            <button class="quiz-mode" data-quiz-mode="karan" role="radio" aria-checked="false"><span>🤫</span><strong>ตัวการันต์</strong><small>15 ข้อ · ตัวเงียบและคำอ่าน</small></button>
-          </div>
-          <button id="startQuiz" class="primary-button">เริ่มชุดจากภาพแบบเรียน 20 ข้อ</button>
-        </div>
-        <div id="quizPlay" class="quiz-play" hidden>
-          <div class="quiz-top"><span id="quizCounter">ข้อ 1/10</span><span>คะแนน <b id="quizScore">0</b></span></div>
-          <div class="progress"><i id="quizProgressBar"></i></div>
-          <article class="quiz-card">
-            <p id="quizQuestion">คำถาม</p>
-            <div id="quizVisual" class="word-visual quiz-visual" role="img" hidden></div>
-            <div id="quizSubject" class="quiz-subject">ก</div>
-            <p id="quizInstruction" class="quiz-instruction" hidden>เลือกได้มากกว่า 1 คำตอบ แล้วกด “ตรวจคำตอบ”</p>
-            <div id="quizAnswers" class="quiz-answers"></div>
-            <button id="checkQuiz" class="check-button" type="button" hidden>ตรวจคำตอบ</button>
-            <div id="quizFeedback" class="feedback quiz-solution" aria-live="polite"></div>
-            <button id="nextQuiz" class="primary-button quiz-next" type="button" hidden>ข้อต่อไป</button>
-          </article>
-        </div>
-        <div id="quizResult" class="quiz-result" hidden></div>
-      </section>
-
-      <section id="parent-view" class="screen" aria-labelledby="parentTitle">
-        <div class="parent-heading"><div><p class="step-label parent">สำหรับผู้ปกครอง</p><h2 id="parentTitle">ผลการเรียนของมาริซ่า</h2><p>คะแนนจะบันทึกเฉพาะในอุปกรณ์เครื่องนี้</p></div><button id="resetProgress" class="text-button">เริ่มเก็บผลใหม่</button></div>
-        <div class="stats-grid">
-          <article><span>ดาวสะสม</span><strong id="statStars">0 ⭐</strong></article>
-          <article><span>ตอบไปแล้ว</span><strong id="statAttempts">0 ข้อ</strong></article>
-          <article><span>ความแม่นยำ</span><strong id="statAccuracy">–</strong></article>
-          <article><span>ตัวการันต์ล่าสุด</span><strong id="statKaran">ยังไม่ได้เล่น</strong></article>
-          <article><span>สังคมศึกษาล่าสุด</span><strong id="statSocial">ยังไม่ได้เล่น</strong></article>
-          <article><span>แก้วจอมแก่นล่าสุด</span><strong id="statKaewStory">ยังไม่ได้เล่น</strong></article>
-          <article><span>นกกางเขนล่าสุด</span><strong id="statNok">ยังไม่ได้เล่น</strong></article>
-          <article><span>แบบทดสอบล่าสุด</span><strong id="statQuiz">ยังไม่ได้ทำ</strong></article>
-        </div>
-        <div class="parent-panels">
-          <article class="report-card"><h3>เรื่องที่ควรทบทวน</h3><div id="weakAreas" class="weak-list"><p>เริ่มเล่นเกมเพื่อดูผลการเรียนค่ะ</p></div></article>
-          <article class="report-card"><h3>เป้าหมายวันนี้</h3><ul><li id="goalClass">จำแนกไตรยางศ์ให้ได้อย่างน้อย 8/10</li><li id="goalTone">บอกเสียงวรรณยุกต์ให้ได้อย่างน้อย 8/10</li><li id="goalKaran">หาตัวการันต์ให้ได้อย่างน้อย 8/10</li><li id="goalSocial">คิดวิเคราะห์สังคมศึกษาให้ได้อย่างน้อย 80%</li><li id="goalQuiz">ทำแบบทดสอบภาษาไทยให้ได้อย่างน้อย 80%</li></ul></article>
-        </div>
-      </section>
-    </main>
-  </div>
-
-  <div id="celebration" class="celebration" aria-hidden="true"></div>
   <script src="app.js"></script>
 </body>
 </html>
